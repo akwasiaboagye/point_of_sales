@@ -3,7 +3,7 @@ import React from 'react'
 const SideBar = () => {
   return (
     <div>
-      <div class="iq-sidebar sidebar-default sideflow" style={{overflowY:"scroll"}}>
+      <div class="iq-sidebar sidebar-default sideflow" style={{overflowY:"scroll",backgroundColor:"lightblue"}}>
         <div
           class="iq-sidebar-logo d-flex align-items-center justify-content-between"
         >
@@ -43,10 +43,10 @@ const SideBar = () => {
                     <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                     <line x1="12" y1="22.08" x2="12" y2="12"></line>
                   </svg>
-                  <span class="ml-4">Dashboard</span>
+                  <span class="ml-4 sidebar">Dashboard</span>
                 </a>
               </li>
-              <li class=" ">
+              <li class="">
                 <a
                   href="#product"
                   class="collapsed"
@@ -72,7 +72,7 @@ const SideBar = () => {
                       d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
                     ></path>
                   </svg>
-                  <span class="ml-4">Products</span>
+                  <span class="ml-4 sidebar" >Products</span>
                   <svg
                     class="svg-icon iq-arrow-right arrow-active"
                     width="20"
@@ -91,22 +91,22 @@ const SideBar = () => {
                 </a>
                 <ul
                   id="product"
-                  class="iq-submenu collapse"
+                  class="iq-submenu collapse "
                   data-parent="#iq-sidebar-toggle"
                 >
                   <li class="">
                     <a href="/listproducts">
-                      <i class="las la-minus"></i><span>List Product</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>List Product</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/addproducts">
-                      <i class="las la-minus"></i><span>Add Product</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add Product</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/expiring">
-                      <i class="las la-minus"></i><span>Expiring Product</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Expiring Product</span>
                     </a>
                   </li>
                 </ul>
@@ -143,7 +143,7 @@ const SideBar = () => {
                       d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
                     ></path>
                   </svg>
-                  <span class="ml-4">Categories</span>
+                  <span class="ml-4 sidebar" >Categories</span>
                   <svg
                     class="svg-icon iq-arrow-right arrow-active"
                     width="20"
@@ -167,12 +167,12 @@ const SideBar = () => {
                 >
                   <li class="">
                     <a href="/listcategory">
-                      <i class="las la-minus"></i><span>List Category</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>List Category</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/addcategories">
-                      <i class="las la-minus"></i><span>Add Category</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add Category</span>
                     </a>
                   </li>
                 </ul>
@@ -200,7 +200,7 @@ const SideBar = () => {
                     <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
                     <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
                   </svg>
-                  <span class="ml-4">Sale</span>
+                  <span class="ml-4 sidebar" >Sale</span>
                   <svg
                     class="svg-icon iq-arrow-right arrow-active"
                     width="20"
@@ -224,12 +224,12 @@ const SideBar = () => {
                 >
                   <li class="">
                     <a href="listsales">
-                      <i class="las la-minus"></i><span>List Sale</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>List Sale</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="addsales">
-                      <i class="las la-minus"></i><span>POS</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>POS</span>
                     </a>
                   </li>
                 </ul>
@@ -264,7 +264,7 @@ const SideBar = () => {
                     ></rect>
                     <line x1="1" y1="10" x2="23" y2="10"></line>
                   </svg>
-                  <span class="ml-4">Purchases</span>
+                  <span class="ml-4 sidebar" >Purchases</span>
                   <svg
                     class="svg-icon iq-arrow-right arrow-active"
                     width="20"
@@ -288,22 +288,22 @@ const SideBar = () => {
                 >
                   <li class="">
                     <a href="purchaselist">
-                      <i class="las la-minus"></i><span>List Purchases</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>List Purchases</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="addpurchase">
-                      <i class="las la-minus"></i><span>Add purchase</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add purchase</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="">
-                      <i class="las la-minus"></i><span>OrderList</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>OrderList</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="">
-                      <i class="las la-minus"></i><span>Add Order</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add Order</span>
                     </a>
                   </li>
                 </ul>
@@ -333,7 +333,7 @@ const SideBar = () => {
                     <line x1="14" y1="10" x2="21" y2="3"></line>
                     <line x1="3" y1="21" x2="10" y2="14"></line>
                   </svg>
-                  <span class="ml-4">Returns</span>
+                  <span class="ml-4 sidebar" >Returns</span>
                   <svg
                     class="svg-icon iq-arrow-right arrow-active"
                     width="20"
@@ -357,12 +357,12 @@ const SideBar = () => {
                 >
                   <li class="">
                     <a href="/returnlist">
-                      <i class="las la-minus"></i><span>List Returns</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>List Returns</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/addreturn">
-                      <i class="las la-minus"></i><span>Add Return</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add Return</span>
                     </a>
                   </li>
                 </ul>
@@ -392,7 +392,7 @@ const SideBar = () => {
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                   </svg>
-                  <span class="ml-4">People</span>
+                  <span class="ml-4 sidebar" >People</span>
                   <svg
                     class="svg-icon iq-arrow-right arrow-active"
                     width="20"
@@ -416,32 +416,32 @@ const SideBar = () => {
                 >
                   <li class="">
                     <a href="/customers">
-                      <i class="las la-minus"></i><span>Customers</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Customers</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/addcustormers">
-                      <i class="las la-minus"></i><span>Add Customers</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add Customers</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/users">
-                      <i class="las la-minus"></i><span>Users</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Users</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/addusers">
-                      <i class="las la-minus"></i><span>Add Users</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add Users</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/suppliers">
-                      <i class="las la-minus"></i><span>Suppliers</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Suppliers</span>
                     </a>
                   </li>
                   <li class="">
                     <a href="/addsuppliers">
-                      <i class="las la-minus"></i><span>Add Suppliers</span>
+                      <i class="las la-minus"></i><span style={{color:"black"}}>Add Suppliers</span>
                     </a>
                   </li>
                 </ul>
@@ -469,7 +469,7 @@ const SideBar = () => {
                     <line x1="16" y1="17" x2="8" y2="17"></line>
                     <polyline points="10 9 9 9 8 9"></polyline>
                   </svg>
-                  <span class="ml-4">Reports</span>
+                  <span class="ml-4 sidebar" >Reports</span>
                 </a>
                 <ul
                   id="invoice"
@@ -499,7 +499,7 @@ const SideBar = () => {
                     <line x1="16" y1="17" x2="8" y2="17"></line>
                     <polyline points="10 9 9 9 8 9"></polyline>
                   </svg>
-                  <span class="ml-4">Invoice</span>
+                  <span class="ml-4 sidebar">Invoice</span>
                 </a>
                 <ul
                   id="invoice"

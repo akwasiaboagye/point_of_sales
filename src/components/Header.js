@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-      <div class="iq-top-navbar">
+      <div class="iq-top-navbar" style={{backgroundColor:"rgba(5, 6, 60, 0.762)"}}>
         <div class="iq-navbar-custom">
           <nav class="navbar navbar-expand-lg navbar-light p-0">
             {/*<div

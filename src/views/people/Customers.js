@@ -1,9 +1,11 @@
+import { faEdit, faFolderOpen, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import BoostrapTable from "react-bootstrap-table-next";
+import { Table } from "../../components/SolomonLib";
 
 const Customers = () => {
-  const [data, setDate] = useState([]);
+  const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
     getCustomers();
@@ -11,14 +13,27 @@ const Customers = () => {
 
   const getCustomers = () => {
     axios("https://jsonplaceholder.typicode.com/users").then((res) =>
-      setDate(res.data)
+      setCustomers(res.data)
     );
   };
+  const formatAction = (cell, row) => (
+    <div className="btn-group btn-group-sm">
+        <button className="btn btn-info" title="View details" ><i class="ri-eye-line mr-0"></i></button>
+        <button className="btn btn-warning" title="Edit Customer" ><i class="ri-pencil-line mr-0"></i></button>
+        <button className="btn btn-danger" title="Remove Customer" ><i class="ri-delete-bin-line mr-0"></i></button>
+    </div>
+);
 
   const columns = [
-    {dataField: "id",text: "ID"},
-    { dataField: "username", text: "UserName", sort:true },
-    { dataField: "email", text: "Email", sort:true },
+    { dataField: "id",text: "ID", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "name",text: "Customer Name", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "email", text: "Email", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "phone", text: "Phone No.", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "country", text: "Country", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "order", text: "Order", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "status", text: "Status", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "lastorder", text: "Last Order", sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
+    { dataField: "action", text: "Action",formatter:(cell,row) => formatAction(cell,row), sort:true, headerStyle: (col, idx) => ({ width:'180px', textAlign: 'center', fontWeight: 'bold'}) },
    
   ];
 
@@ -38,7 +53,7 @@ const Customers = () => {
                   </p>
                 </div>
                 <a
-                  href="page-add-customers.html"
+                  href="/addcustormers"
                   class="btn btn-primary add-list"
                 >
                   <i class="las la-plus mr-3"></i>Add Customer
@@ -46,8 +61,8 @@ const Customers = () => {
               </div>
             </div>
             <div class="col-lg-12">
-              <div class="table-responsive rounded mb-3">
-                <BoostrapTable data={data} keyField="id" columns={columns}vstriped hover condensed />
+              <div class="table-responsive rounded mb-3 box">
+                <Table data={customers} keys="id" columns={columns} striped hover condensed />
               </div>
             </div>
           </div>

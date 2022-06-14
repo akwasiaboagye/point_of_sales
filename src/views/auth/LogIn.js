@@ -18,7 +18,11 @@ const LogIn = () => {
     e.preventDefault()
 
     //postoptions code here//
+
+    window.location.reload();
   }
+
+  
 
   return (
     <div>

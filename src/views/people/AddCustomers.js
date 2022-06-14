@@ -9,7 +9,7 @@ const AddCustomers = () => {
     customer_address: "",
     customer_city: "",
     customer_group: "",
-    customer_state:"",
+    customer_state: "",
     createdby: "admin",
     createdon: new Date(),
     modifiedby: "admin",
@@ -28,6 +28,25 @@ const AddCustomers = () => {
     e.preventDefault();
 
     //postoptions code here//
+
+    reload();
+  };
+
+  const reload = () => {
+    setCustomerItems({
+      customer_name: "",
+      customer_email: "",
+      customer_number: "",
+      customer_country: "",
+      customer_address: "",
+      customer_city: "",
+      customer_group: "",
+      customer_state: "",
+      createdby: "admin",
+      createdon: new Date(),
+      modifiedby: "admin",
+      modifiedon: new Date(),
+    });
   };
 
   return (
@@ -43,10 +62,7 @@ const AddCustomers = () => {
                   </div>
                 </div>
                 <div class="card-body">
-                  <form
-                    action="page-list-customers.html"
-                    data-toggle="validator"
-                  >
+                  <form onSubmit={submitHandler} data-toggle="validator">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
@@ -67,7 +83,7 @@ const AddCustomers = () => {
                         <div class="form-group">
                           <label>Email *</label>
                           <input
-                            type="text"
+                            type="email"
                             name="customer_email"
                             class="form-control"
                             placeholder="Enter Email"

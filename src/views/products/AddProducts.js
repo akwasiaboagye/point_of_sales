@@ -13,6 +13,7 @@ const AddProducts = () => {
     price: "",
     tax_method: "",
     quantity: "",
+    profit:"",
     product_description: "",
     createby: "admin",
     createon: new Date(),
@@ -143,7 +144,7 @@ const AddProducts = () => {
                             value={productItems.barcode}
                             onChange={handleChange}
                           >
-                            <option></option>
+                            <option>Select</option>
                             <option>CREM01</option>
                             <option>UM01</option>
                             <option>SEM01</option>
@@ -164,7 +165,7 @@ const AddProducts = () => {
                             value={productItems.category}
                             onChange={handleChange}
                           >
-                            <option></option>
+                            <option>Selcet</option>
                             <option>Beauty</option>
                             <option>Grocery</option>
                             <option>Food</option>
@@ -217,7 +218,7 @@ const AddProducts = () => {
                             value={productItems.tax_method}
                             onChange={handleChange}
                           >
-                            <option></option>
+                            <option>Selcet</option>
                             <option>Exclusive</option>
                             <option>Inclusive</option>
                           </select>
@@ -240,6 +241,22 @@ const AddProducts = () => {
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
+                          <label>Profit *</label>
+                          <input
+                            type="number"
+                            name="profit"
+                            class="form-control"
+                            placeholder="Profit will be calculated once price and cost is entered"
+                            required
+                            readOnly
+                            value={productItems.profit}
+                            onChange={handleChange}
+                          />
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
                           <label>Image</label>
                           <input
                             type="file"
@@ -249,7 +266,7 @@ const AddProducts = () => {
                           />
                         </div>
                       </div>
-                      <div class="col-md-12">
+                      <div class="col-md-6">
                         <div class="form-group">
                           <label>Description / Product Details</label>
                           <textarea
